@@ -28,4 +28,7 @@ public class UrlConsts {
 
 	// 認証不要画面
 	public static final String[] NO_AUTHENTICATION = {LOGIN, AUTHENTICATE};
+
+	// 分割情報管理画面
+	public static final String CATEGORIZED_INFO_MNG = "/admin/categorizedInfoMng";
 }
