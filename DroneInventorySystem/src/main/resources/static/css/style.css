@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.table-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.table-center {
+	height: 50%;
+	width: 50%;
+	border-collapse: collapse;
+}
+
+.table-center td {
+	text-align: center;
+}

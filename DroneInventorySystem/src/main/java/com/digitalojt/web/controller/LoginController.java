@@ -60,7 +60,7 @@ public class LoginController {
 
 		if (isCorrectUserAuth) {
 
-			return "redirect:" + UrlConsts.STOCK_LIST;
+			return "redirect:" + UrlConsts.CATEGORIZED_INFO_MNG;
 		} else {
 
 			// エラーメッセージをプロパティファイルから取得
