@@ -7,7 +7,23 @@
     <title>InvenTrack</title>
   </head>
 
-  <body>
-	<p>Hello World</p>
-  </body>
+    <body>
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h6 class="m-0 font-weight-bold text-primary">分類情報管理</h6>
+			</div>
+			
+			<div class="card-body">
+				<div class="table-body">
+					<table class="table table-bordered table-center" cellspacing="0">
+						<tbody>
+							<tr th:each="item : ${itemCategory}">
+								<td th:text="${item}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
