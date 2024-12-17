@@ -1,8 +1,74 @@
 @charset "UTF-8";
+
+.search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 100px;
+	margin-bottom: 20px;
+}
+
+.filter {
+	font-size: 20px;
+	gap: 10px;
+	margin: 0;
+	text-decoration: underline;
+	text-align: center;
+	width: auto;
+}
+
+.categories {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+}
+
+.form {
+	display: flex;
+}
+
+.form p {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 50px;
+	padding-right: 10px;
+	text-align: left;
+	white-space: nowrap;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  padding-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 600px;
+  align-items: center;
+}
+
+button {
+	height: 35px;
+	white-space: nowrap;
+	background-color: papayawhip;
+	width: 70px;
+}
+
+.error-msg {
+	color: red;
+	font-size: 14px;
+}
+
 .table-body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
 }
 
 .table-center {
@@ -14,3 +80,4 @@
 .table-center td {
 	text-align: center;
 }
+
