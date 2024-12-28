@@ -11,17 +11,34 @@
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
 				<h6 class="m-0 font-weight-bold text-primary">分類情報管理</h6>
-			</div>
-			
-			<div class="card-body">
-				<div class="table-body">
-					<table class="table table-bordered table-center" cellspacing="0">
-						<tbody>
-							<tr th:each="item : ${itemCategory}">
-								<td th:text="${item}"></td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="card-body">
+					<!-- 検索条件部分 -->
+					<div class="search">
+						<div class="categories">
+							<div class="form">
+								<p class="filter">検索条件</p>
+								<p>分類名</p>
+								<form th:action="@{/searchCategory}" th:object="${searchForm}" method="post">
+									<input type="text" id="searchKeyword" th:field="*{searchKeyword}" />
+									<button type="submit">検索</button>
+								</form>
+							</div>
+							<!-- エラーメッセージ表示 -->
+							<div th:if="${#fields.hasErrors('searchForm.searchKeyword')}" class="error-msg">
+								<p th:errors="*{searchForm.searchKeyword}"></p>
+							</div>
+						</div>
+					</div>
+					<!-- 表部分 -->
+					<div class="table-body">
+						<table class="table table-bordered table-center" id="dataTable" cellspacing="0">
+							<tbody>
+								<tr th:each="item : ${itemCategory}">
+									<td th:text="${item}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
