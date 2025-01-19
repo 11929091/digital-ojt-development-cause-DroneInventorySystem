@@ -9,7 +9,7 @@ package com.digitalojt.web.consts;
 public class UrlConsts {
 
 	// ログイン
-	public static final String LOGIN = "/login";
+	public static final String LOGIN = "/";
 
 	// 認証
 	public static final String AUTHENTICATE = "/authenticate";
