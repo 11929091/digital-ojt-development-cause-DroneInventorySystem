@@ -9,10 +9,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 分類名情報Entity
+ * 分類名情報 Entity
  * 
  * @author Kazuma Kuroki
- *
  */
 @Data
 @Getter
@@ -29,7 +28,7 @@ public class CategoryInfo {
 	/**
 	 * 分類名
 	 */
-	private String CategoryName;
+	private String categoryName;
 	
 	/**
 	 * 論理削除フラグ
