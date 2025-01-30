@@ -30,5 +30,8 @@ public class UrlConsts {
 	public static final String[] NO_AUTHENTICATION = {LOGIN, AUTHENTICATE};
 
 	// 分割情報管理画面
-	public static final String CATEGORIZED_INFO_MNG = "/admin/categorizedInfoMng";
+	public static final String CATEGORY_INFO = "/admin/categoryInfo";
+
+	// 分割情報管理画面 検索
+	public static final String CATEGORY_INFO_SEARCH = "/admin/categoryInfo/search";
 }

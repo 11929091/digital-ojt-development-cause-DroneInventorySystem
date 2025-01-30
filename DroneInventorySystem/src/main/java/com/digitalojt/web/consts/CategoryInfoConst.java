@@ -6,7 +6,7 @@ package com.digitalojt.web.consts;
  * @author Kazuma Kuroki
  * 
  */
-public class ItemCategory {
+public class CategoryInfoConst {
 
 	// フレーム
 	public static final String FRAME = "フレーム";
