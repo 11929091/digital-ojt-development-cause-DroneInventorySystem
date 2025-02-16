@@ -21,6 +21,8 @@ import jakarta.validation.Payload;
 public @interface CenterInfoFormValidator {
 
 	String message() default ErrorMessage.ALL_FIELDS_EMPTY_ERROR_MESSAGE;
-    Class<?>[] groups() default {};
-    Class<? extends Payload>[] payload() default {};
+
+	Class<?>[] groups() default {};
+
+	Class<? extends Payload>[] payload() default {};
 }

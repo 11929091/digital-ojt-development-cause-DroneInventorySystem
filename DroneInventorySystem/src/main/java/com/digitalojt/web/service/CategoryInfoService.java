@@ -2,6 +2,7 @@ package com.digitalojt.web.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.digitalojt.web.entity.CategoryInfo;
@@ -19,7 +20,8 @@ import lombok.RequiredArgsConstructor;
 public class CategoryInfoService {
 
 	/** 分類情報管理画面 Repository */
-	private final CategoryInfoRepository repository;
+	@Autowired
+	CategoryInfoRepository repository;
 
 	/**
 	 * 分類名情報全件検索
