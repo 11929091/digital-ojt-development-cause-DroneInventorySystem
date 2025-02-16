@@ -29,8 +29,21 @@
 	align-items: center;
 }
 
+form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
 .form {
 	display: flex;
+	flex-wrap: nowrap;
+	gap: 10px;
+	padding-left: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
+	max-width: 600px;
+	align-items: center;
+  
 }
 
 .form p {
@@ -42,26 +55,20 @@
 	white-space: nowrap;
 }
 
-form {
-  display: flex;
-  gap: 10px;
-  padding-left: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
-  max-width: 600px;
-  align-items: center;
+.searchTerm{
+	margin-right: 50px;
 }
 
 button {
 	height: 35px;
+	width: 70px;
 	white-space: nowrap;
 	background-color: papayawhip;
-	width: 70px;
+	margin-left: 50px;
 }
 
-.error-msg {
-	color: red;
-	font-size: 14px;
+.errorMsg {
+	text-align: center;
 }
 
 .table-body {

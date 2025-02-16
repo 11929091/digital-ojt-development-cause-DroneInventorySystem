@@ -8,7 +8,7 @@ package com.digitalojt.web.consts;
 public enum InvalidCharacter {
 
 	CURLY_BRACE_OPEN('{'), CURLY_BRACE_CLOSE('}'), PARENTHESIS_OPEN('('), PARENTHESIS_CLOSE(')'), EQUAL_SIGN(
-			'='), AMPERSAND('&'), SEMICOLON(';'), DOLLAR_SIGN('$'), QUESTION_MARK('?'), ASTERISK('*');
+			'='), AMPERSAND('&'), SEMICOLON(';'), DOLLAR_SIGN('$'), QUESTION_MARK('?'), ASTERISK('*'), HALF_BLANK(' ');
 
 	private final char character;
 

@@ -18,6 +18,16 @@ import com.digitalojt.web.entity.CenterInfo;
 public interface CenterInfoRepository extends JpaRepository<CenterInfo, Integer> {
 
 	/**
+	 * 初期表示用に在庫センター情報を取得
+	 * 
+	 * @param operationalStatus	稼働状況ステータス
+	 * @param deleteFlag	削除フラグ
+	 * @return 稼働状況ステータスが「0」（稼働中）かつ削除フラグが「0」（未削除）のデータを全件取得（住所で昇順）
+	 */
+	@Query("SELECT s FROM CenterInfo s WHERE s.operationalStatus = ?1 AND s.deleteFlag = ?2 ORDER BY s.address ASC")
+	List<CenterInfo> findActiveCenters(String operationalStatus, String deleteFlag);
+
+	/**
 	 * 引数に合致する在庫センター情報を取得
 	 * 
 	 * @param centerName
@@ -37,4 +47,5 @@ public interface CenterInfoRepository extends JpaRepository<CenterInfo, Integer>
 			String region,
 			Integer storageCapacityFrom,
 			Integer storageCapacityTo);
+
 }

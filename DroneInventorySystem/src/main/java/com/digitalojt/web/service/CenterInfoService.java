@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.util.StringUtils;
 
+import com.digitalojt.web.consts.FormParams;
 import com.digitalojt.web.entity.CenterInfo;
 import com.digitalojt.web.repository.CenterInfoRepository;
 
@@ -32,7 +33,7 @@ public class CenterInfoService {
 	public List<CenterInfo> getCenterInfoData() {
 
 		// 在庫センター情報作成
-		List<CenterInfo> centerInfoList = createCenterInfo();
+		List<CenterInfo> centerInfoList = repository.findActiveCenters("0", "0");
 
 		return centerInfoList;
 	}
@@ -79,6 +80,45 @@ public class CenterInfoService {
 		});
 
 		return hitCenterInfoList;
+	}
+
+	/**
+	 * 検索処理
+	 * 
+	 * @param centerInfoList
+	 * @param centerName
+	 * @param region 
+	 * @return
+	 */
+	public List<CenterInfo> searchCenterInfoData(String centerName, String region, String storageCapacityFrom,
+			String storageCapacityTo) {
+
+		int storageCapacityFromInt = 0;
+		int storageCapacityToInt = 0;
+
+		if (storageCapacityFrom != null && storageCapacityTo != null) {
+			// String型で渡って来た値をint型に型変換
+			try {
+				storageCapacityFromInt = Integer.parseInt(storageCapacityFrom);
+			} catch (NumberFormatException e) {
+				// 容量の最小値を設定
+				storageCapacityFromInt = FormParams.CENTER_INFO_MIN_CAPACITY;
+			}
+			try {
+				storageCapacityToInt = Integer.parseInt(storageCapacityTo);
+			} catch (NumberFormatException e) {
+				// 容量の最大値を設定
+				storageCapacityToInt = FormParams.CENTER_INFO_MAX_CAPACITY;
+			}
+
+		}
+
+		// 検索結果取得
+		List<CenterInfo> centerInfoList = repository.findByCenterNameAndRegionAndStorageCapacity(centerName, region,
+				storageCapacityFromInt, storageCapacityToInt);
+
+		return centerInfoList;
+
 	}
 
 	/**

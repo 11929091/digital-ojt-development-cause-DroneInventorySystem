@@ -18,27 +18,48 @@
 			
 			<!-- 検索フォーム -->
 			<div class="search-container">
-				<form class="form-inline" method="post" th:action="@{'/admin/centerInfo/search'}" th:object="${CenterInfoForm}">
-					<label for="searchTerm" class="mr-2">検索条件</label>
+				<form class="search-container d-flex justify-content-center align-items-center" method="post" th:action="@{'/admin/centerInfo/search'}" th:object="${CenterInfoForm}" style="white-space: nowrap;">
 					
-					<label for="searchTerm" class="mr-2">センター名</label>
- 					<input type="text" id="searchTerm" name="centerName" class="form-control mr-2">
+					<!-- 検索条件 -->
+					<div class="searchTerm">
+						<label for="searchTerm" class="mr-2">検索条件</label>
+					</div>
+					
+					<!-- センター名 -->
+					<div class="d-flex align-items-center mr-3" style="width: 500px;">
+						<label for="centerName" class="mr-2">センター名</label>
+						<input type="text" id="centerName" name="centerName" class="form-control mr-2">
+					</div>
  					
- 					<label for="searchTerm" class="mr-2">都道府県</label>
- 					<select id="searchTerm" name="region" class="form-control mr-2">
-						 <option value="">選択してください</option>
-						 <option th:each="region : ${regions}" 
-						 	th:value="${region.name}" 
-						 	th:text="${region.name}"></option>
-					</select>
+ 					<!-- 都道府県 -->
+ 					<div class="d-flex align-items-center mr-3">
+	 					<label for="region" class="mr-2">都道府県</label>
+	 					<select id="region" name="region" class="form-control mr-2">
+							 <option value="">選択してください</option>
+							 <option th:each="region : ${regions}" 
+							 	th:value="${region.name}" 
+							 	th:text="${region.name}"></option>
+						</select>
+ 					</div>
+ 					
+ 					<!-- 容量 -->
+					<div class="d-flex align-items-center mr-3">
+						<label for="storageCapacity" class="mr-2">容量</label>
+						<input type="text" id="storageCapacityFrom" name="storageCapacityFrom" class="form-control mr-2">
+						<span class="mr-2">〜</span>
+						<input type="text" id="storageCapacityTo" name="storageCapacityTo" class="form-control mr-2">
+					</div>
 					
  					<button type="submit" class="btn btn-primary">検索</button>
  				</form>
  				
- 				<!-- エラーメッセージの表示 -->
- 				<div th:if="${errorMsg != null}" class="text-danger">
-					 <p th:text="${errorMsg}"></p>
+				<!-- エラーメッセージの表示 -->
+				<div class="errorMsg">
+					<div th:if="${errorMsg != null}" class="text-danger">
+						<p th:text="${errorMsg}"></p>
+					</div>
 				</div>
+ 				
 			</div>
  			
 			<!-- 在庫センター情報テーブル -->
@@ -50,6 +71,8 @@
 							<th>住所</th>
 							<th>連絡先</th>
 							<th>管理者名</th>
+							<th>最大保存容量(㎥)</th>
+							<th>現在保存容量(㎥)</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -58,6 +81,8 @@
 							<td> [[${item.address}]] </td>
 							<td> [[${item.phoneNumber}]] </td>
 							<td> [[${item.managerName}]] </td>
+							<td> [[${item.maxStorageCapacity}]] </td>
+							<td> [[${item.currentStorageCapacity}]] </td>
 						</tr>
 					</tbody>
 				</table>

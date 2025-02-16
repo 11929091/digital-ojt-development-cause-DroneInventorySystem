@@ -14,12 +14,27 @@ public class ErrorMessage {
 	// すべての項目が空の場合のエラーメッセージ
 	public static final String ALL_FIELDS_EMPTY_ERROR_MESSAGE = "allField.empty";
 
-	// 空文字検索に関するエラーメッセージ
+	// 予期せぬ入力検知に関するエラーメッセージ
 	public static final String UNEXPECTED_INPUT_ERROR_MESSAGE = "unexpected.input";
 
 	// 不正な文字列を使用した検索に関するエラーメッセージ
 	public static final String INVALID_INPUT_ERROR_MESSAGE = "invalid.input";
 
-	// 文字超過に関するエラーメッセージ
+	// 分類情報管理_空文字検索に関するエラーメッセージ
+	public static final String CATEGORY_NAME_EMPTY_ERROR_MESSAGE = "categoryName.empty";
+
+	// 分類情報管理_文字超過に関するエラーメッセージ
+	public static final String CATEGORY_NAME_LENGTH_ERROR_MESSAGE = "categoryName.length.wrongInput";
+
+	// 在庫センター情報_空文字検索に関するエラーメッセージ
+	public static final String CENTER_NAME_EMPTY_ERROR_MESSAGE = "centerName.empty";
+
+	// 在庫センター情報_文字超過に関するエラーメッセージ
 	public static final String CENTER_NAME_LENGTH_ERROR_MESSAGE = "centerName.length.wrongInput";
+
+	// 在庫センター情報_容量入力に関するエラーメッセージ
+	public static final String STORAGE_CAPACITY_WRONG_INPUT_ERROR_MESSAGE = "storageCapacity.wrongInput";
+
+	// 在庫センター情報_容量比較に関するエラーメッセージ
+	public static final String STORAGE_CAPACITY_COMPARE_CURRENT_CAPACITY_ERROR_MESSAGE = "storageCapacity.compareCurrentCapacity";
 }

@@ -54,17 +54,17 @@ public class CenterInfo {
 	/**
 	 * 最大容量
 	 */
-	private String maxStorageCapacity;
+	private Integer maxStorageCapacity;
 	
 	/**
 	 * 現在容量
 	 */
-	private String currentStorageCapacity;
+	private Integer currentStorageCapacity;
 	
 	/**
 	 * 論理削除フラグ
 	 */
-	private String deleteFlag;
+	private int deleteFlag;
 
 	/**
 	 * 更新日

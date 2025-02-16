@@ -18,14 +18,14 @@
 							<div class="form">
 								<p class="filter">検索条件</p>
 								<p>分類名</p>
-								<form th:action="@{/admin/categoryInfo/search}" th:object="${searchForm}" method="post">
+								<form th:action="@{/admin/categoryInfo/search}" th:object="${CategoryInfoForm}" method="post">
 									<input type="text" id="categoryName" th:field="*{categoryName}" />
 									<button type="submit">検索</button>
 								</form>
 							</div>
 							<!-- エラーメッセージ表示 -->
-							<div th:if="${#fields.hasErrors('searchForm.categoryName')}" class="error-msg">
-								<p th:errors="*{searchForm.categoryName}"></p>
+			 				<div th:if="${errorMsg != null}" class="text-danger">
+								<p th:text="${errorMsg}"></p>
 							</div>
 						</div>
 					</div>
@@ -34,7 +34,7 @@
 						<table class="table table-bordered table-center" id="dataTable" cellspacing="0">
 							<tbody>
 								<tr th:each="categoryInfo : ${categoryInfo}">
-									<td th:text="${categoryInfo.CategoryName}"></td>
+									<td th:text="${categoryInfo.categoryName}"></td>
 								</tr>
 							</tbody>
 						</table>
