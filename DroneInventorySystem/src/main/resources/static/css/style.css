@@ -88,3 +88,24 @@ button {
 	text-align: center;
 }
 
+.table-updateDelete {
+  width: 40px;
+  min-width: 40px;
+  text-align: left; /* ボタンを左寄せ */
+  padding-left: 5px;
+}
+
+.table-updateDelete button {
+  margin-left: 0px;
+  padding: 2px 5px;
+  font-size: 12px;
+  width: 50px;
+}
+
+.register {
+	text-decoration: underline;
+	float: right;
+	font-size: 16px;
+	margin-right: 20px;
+}
+

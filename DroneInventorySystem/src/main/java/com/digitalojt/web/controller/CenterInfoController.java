@@ -108,4 +108,15 @@ public class CenterInfoController {
 
 		return "admin/centerInfo/index";
 	}
+
+	/**
+	 * 登録画面遷移
+	 * 
+	 * @param model
+	 * @return
+	 */
+	@GetMapping(UrlConsts.CENTER_INFO_REGISTER)
+	public String registerDisplay(Model model) {
+		return "admin/centerInfo/register";
+	}
 }
