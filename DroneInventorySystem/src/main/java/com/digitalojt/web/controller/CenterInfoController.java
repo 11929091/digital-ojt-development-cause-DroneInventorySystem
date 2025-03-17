@@ -3,18 +3,21 @@ package com.digitalojt.web.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.digitalojt.web.consts.Region;
 import com.digitalojt.web.consts.UrlConsts;
 import com.digitalojt.web.entity.CenterInfo;
-import com.digitalojt.web.form.CenterInfoForm;
+import com.digitalojt.web.form.CenterInfoRegisterForm;
+import com.digitalojt.web.form.CenterInfoSearchForm;
 import com.digitalojt.web.service.CenterInfoService;
 import com.digitalojt.web.util.MessageManager;
 
@@ -71,7 +74,7 @@ public class CenterInfoController {
 	 * @return
 	 */
 	@PostMapping(UrlConsts.CENTER_INFO_SEARCH)
-	public String search(@Valid CenterInfoForm form, BindingResult bindingResult,
+	public String search(@Valid CenterInfoSearchForm form, BindingResult bindingResult,
 			Model model) {
 
 		// Valid項目チェック
@@ -110,13 +113,66 @@ public class CenterInfoController {
 	}
 
 	/**
-	 * 登録画面遷移
+	 * 登録画面表示
 	 * 
 	 * @param model
 	 * @return
 	 */
-	@GetMapping(UrlConsts.CENTER_INFO_REGISTER)
+	@GetMapping(UrlConsts.CENTER_INFO_REGISTER_DISPLAY)
 	public String registerDisplay(Model model) {
+
+		// 登録フォーム入力画面へ
 		return "admin/centerInfo/register";
+	}
+
+	/**
+	 * 登録処理
+	 * 
+	 * @param model
+	 * @param form
+	 * @return
+	 */
+	@PostMapping(UrlConsts.CENTER_INFO_REGISTER)
+	public String register(@Valid CenterInfoRegisterForm form, BindingResult bindingResult,
+			Model model) {
+
+		// Valid項目チェック
+		if (bindingResult.hasErrors()) {
+
+			// エラーメッセージをプロパティファイルから取得
+			String errorMsg = MessageManager.getMessage(messageSource,
+					bindingResult.getGlobalError().getDefaultMessage());
+			model.addAttribute("errorMsg", errorMsg);
+
+			return "admin/centerInfo/register";
+		}
+
+		centerInfoService.registerCenterInfoData(form);
+
+		centerInfoList = centerInfoService.getCenterInfoData();
+
+		// 画面表示用に商品情報リストをセット
+		model.addAttribute("centerInfoList", centerInfoList);
+		return "admin/centerInfo/index";
+	}
+
+	/**
+	 * 削除画面表示
+	 * 
+	 * @param model
+	 * @return
+	 */
+	@PostMapping(UrlConsts.CENTER_INFO_DELETE_DISPLAY + "/{id}")
+	public String deleteDisplay(@PathVariable int id, Model model) {
+
+		Optional<CenterInfo> centerInfo = centerInfoService.findById(id);
+
+		if (centerInfo.isPresent()) {
+			return "redirect:/admin/centerInfo/index";
+		}
+
+		model.addAttribute(centerInfo.get());
+		// 削除確認画面へ
+		return "/admin/centerInfo/delete";
 	}
 }

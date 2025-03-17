@@ -16,25 +16,25 @@
 
 		<div class="card-body">
 			
-			<!-- 登録フォーム -->
+			<!-- 削除確認画面 -->
 			<div class="register-container">
-				<form class="register-container d-flex justify-content-center align-items-center" method="post" th:action="@{'/admin/centerInfo/register'}" th:object="${CenterInfoForm}" style="white-space: nowrap;">
+				<form class="register-container d-flex justify-content-center align-items-center" method="post" th:action="@{'/admin/centerInfo/delete/display'}" th:object="${CenterInfo}" style="white-space: nowrap;">
 					<p>センター名</p>
-					<input type="text" id="centerName" name="centerName" class="form-control mr-2">
+					<p> [[${centerInfo.centerName}]] </p>
 					<p>郵便番号</p>
-					<input type="text" id="postCode" name="postCode" class="form-control mr-2">
+					<p> [[${centerInfo.postCode}]] </p>
 					<p>住所</p>
-					<input type="text" id="address" name="address" class="form-control mr-2">
+					<p> [[${centerInfo.address}]] </p>
 					<p>電話番号</p>
-					<input type="text" id="phoneNumber" name="phoneNumber" class="form-control mr-2">
+					<p> [[${centerInfo.phoneNumber}]] </p>
 					<p>管理者名</p>
-					<input type="text" id="managerName" name="managerName" class="form-control mr-2">
+					<p> [[${centerInfo.managerName}]] </p>
 					<p>最大容量</p>
-					<input type="text" id="maxStorageCapacity" name="maxStorageCapacity" class="form-control mr-2">
+					<p> [[${centerInfo.maxStorageCapacity}]] </p>
 					<p>現在容量</p>
-					<input type="text" id="currentStorageCapacity" name="currentStorageCapacity" class="form-control mr-2">
+					<p> [[${centerInfo.currentStorageCapacity}]] </p>
 					
- 					<button type="submit" class="btn btn-primary">登録</button>
+ 					<button type="submit" class="btn btn-primary">削除</button>
  				</form>
  				
 				<!-- エラーメッセージの表示 -->

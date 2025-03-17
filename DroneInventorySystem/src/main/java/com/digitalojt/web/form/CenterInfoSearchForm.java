@@ -1,18 +1,18 @@
 package com.digitalojt.web.form;
 
-import com.digitalojt.web.validation.CenterInfoFormValidator;
+import com.digitalojt.web.validation.CenterInfoSearchFormValidator;
 
 import lombok.Data;
 
 /**
- * 在庫センター情報画面のフォームクラス
+ * 在庫センター情報画面の検索フォームクラス
  * 
  * @author Kazuma Kuroki
  *
  */
 @Data
-@CenterInfoFormValidator
-public class CenterInfoForm {
+@CenterInfoSearchFormValidator
+public class CenterInfoSearchForm {
 
 	/**
 	 * センター名

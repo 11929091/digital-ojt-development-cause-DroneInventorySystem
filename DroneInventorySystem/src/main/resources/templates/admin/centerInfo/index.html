@@ -78,20 +78,29 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="item : ${centerInfoList}">
-							<td> [[${item.centerName}]] </td>
-							<td> [[${item.address}]] </td>
-							<td> [[${item.phoneNumber}]] </td>
-							<td> [[${item.managerName}]] </td>
-							<td> [[${item.maxStorageCapacity}]] </td>
-							<td> [[${item.currentStorageCapacity}]] </td>
-							
-							<td class="table-updateDelete"><button type="submit" class="btn btn-secondary">編集</button></td>
-							<td class="table-updateDelete"><button type="submit" class="btn btn-danger">削除</button></td>
+						<tr th:each="centerInfo : ${centerInfoList}">
+							<td> [[${centerInfo.centerName}]] </td>
+							<td> [[${centerInfo.address}]] </td>
+							<td> [[${centerInfo.phoneNumber}]] </td>
+							<td> [[${centerInfo.managerName}]] </td>
+							<td> [[${centerInfo.maxStorageCapacity}]] </td>
+							<td> [[${centerInfo.currentStorageCapacity}]] </td>
+							<td class="table-updateDelete">
+								<form method="post" th:action="@{'/admin/centerInfo/update/display/' + ${centerInfo.centerId}}">
+									<input type="hidden" name="centerId" value="${centerInfo.centerId}" />
+									<button type="submit" class="btn btn-secondary">編集</button>
+								</form>
+							</td>
+							<td class="table-updateDelete">
+								<form method="post" th:action="@{'/admin/centerInfo/delete/display/' + ${centerInfo.centerId}}">
+									<input type="hidden" name="centerId" value="${centerInfo.centerId}" />
+									<button type="submit" class="btn btn-danger">削除</button>
+								</form>
+							</td>
 						</tr>
 					</tbody>
 				</table>
-				<a th:href="@{centerInfo/register}" class="register">▶︎新規登録はこちら</a>
+				<a th:href="@{centerInfo/register/display}" class="register">▶︎新規登録はこちら</a>
 			</div>
 		</div>
 	</div>

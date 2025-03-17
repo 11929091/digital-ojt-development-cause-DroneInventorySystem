@@ -109,3 +109,37 @@ button {
 	margin-right: 20px;
 }
 
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* フォームの最大幅 */
+  padding: 20px;
+}
+
+.register-container p {
+  margin-bottom: 5px;
+  font-weight: bold;
+  width: 100%; /* テキストの幅を統一 */
+  text-align: left;
+}
+
+.register-container input,
+.register-container button {
+  width: 100%; /* 入力欄とボタンの幅を統一 */
+  margin-bottom: 10px;
+}
+
+.register-container button {
+  max-width: 200px; /* ボタンの最大幅を調整 */
+}
+
+

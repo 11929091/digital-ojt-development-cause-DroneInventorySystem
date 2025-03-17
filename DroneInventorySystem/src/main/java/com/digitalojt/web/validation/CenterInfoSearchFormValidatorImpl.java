@@ -4,7 +4,7 @@ import org.thymeleaf.util.StringUtils;
 
 import com.digitalojt.web.consts.ErrorMessage;
 import com.digitalojt.web.consts.FormParams;
-import com.digitalojt.web.form.CenterInfoForm;
+import com.digitalojt.web.form.CenterInfoSearchForm;
 import com.digitalojt.web.util.ParmCheckUtil;
 
 import jakarta.validation.ConstraintValidator;
@@ -15,13 +15,13 @@ import jakarta.validation.ConstraintValidatorContext;
  * 
  * @author Kazuma Kuroki
  */
-public class CenterInfoFormValidatorImpl implements ConstraintValidator<CenterInfoFormValidator, CenterInfoForm> {
+public class CenterInfoSearchFormValidatorImpl implements ConstraintValidator<CenterInfoSearchFormValidator, CenterInfoSearchForm> {
 
 	/**
 	 * バリデーションチェック
 	 */
 	@Override
-	public boolean isValid(CenterInfoForm form, ConstraintValidatorContext context) {
+	public boolean isValid(CenterInfoSearchForm form, ConstraintValidatorContext context) {
 
 		boolean allFieldsEmpty = StringUtils.isEmpty(form.getCenterName()) &&
 				StringUtils.isEmpty(form.getRegion()) && StringUtils.isEmpty(form.getStorageCapacityFrom())

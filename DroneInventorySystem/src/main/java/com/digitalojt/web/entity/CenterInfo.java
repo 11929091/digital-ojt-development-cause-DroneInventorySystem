@@ -32,6 +32,11 @@ public class CenterInfo {
 	private String centerName;
 	
 	/**
+	 * 郵便番号
+	 */
+	private String postCode;
+
+	/**
 	 * 住所
 	 */
 	private String address;
