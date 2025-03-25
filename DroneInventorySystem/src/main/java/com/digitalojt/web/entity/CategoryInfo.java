@@ -5,8 +5,6 @@ import java.sql.Timestamp;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * 分類名情報 Entity
@@ -14,8 +12,6 @@ import lombok.Setter;
  * @author Kazuma Kuroki
  */
 @Data
-@Getter
-@Setter
 @Entity
 public class CategoryInfo {
 

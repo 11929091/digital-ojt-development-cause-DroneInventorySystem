@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +25,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CenterInfoService {
 
-	/** センター情報テーブル リポジトリー */
+	/** 在庫センター情報テーブル リポジトリー */
+	@Autowired
 	private final CenterInfoRepository repository;
 
 	/**
@@ -35,62 +37,17 @@ public class CenterInfoService {
 	@Transactional
 	public List<CenterInfo> getCenterInfoData() {
 
-		// 在庫センター情報作成
-		List<CenterInfo> centerInfoList = repository.findActiveCenters("0", "0");
-
-		return centerInfoList;
+		// 稼働中の在庫センター情報を検索し、表示
+		return repository.findActiveCenters("0", "0");
 	}
-//
-//	/**
-//	 * 引数に合致する在庫センター情報を取得
-//	 * 
-//	 * @param centerName
-//	 * @param region 
-//	 * @param storageCapacityFrom 
-//	 * @param storageCapacityTo
-//	 * @return 
-//	 */
-//	public List<CenterInfo> getCenterInfoData(String centerName, String region) {
-//
-//		// 在庫センター情報作成
-//		List<CenterInfo> centerInfoList = createCenterInfo();
-//
-//		// 検索処理
-//		centerInfoList = searchCenterInfoData(centerInfoList, centerName, region);
-//
-//		return centerInfoList;
-//	}
-
-//	/**
-//	 * 検索処理
-//	 * 
-//	 * @param centerInfoList
-//	 * @param centerName
-//	 * @param region 
-//	 * @return
-//	 */
-//	private List<CenterInfo> searchCenterInfoData(List<CenterInfo> centerInfoList, String centerName, String region) {
-//
-//		List<CenterInfo> hitCenterInfoList = new ArrayList<>();
-//		
-//		// 引数の文字列と合致する要素のみリストに追加
-//		centerInfoList.forEach(item -> {
-//			if (centerName.equals(item.getCenterName()) && region.equals(item.getAddress())
-//					|| StringUtils.isEmpty(centerName) && item.getAddress().contains(region)
-//					|| StringUtils.isEmpty(region) && item.getCenterName().contains(centerName)) {
-//				hitCenterInfoList.add(item);
-//			}
-//		});
-//
-//		return hitCenterInfoList;
-//	}
 
 	/**
 	 * 検索処理
 	 * 
-	 * @param centerInfoList
 	 * @param centerName
-	 * @param region 
+	 * @param region
+	 * @param storageCapacityFrom 
+	 * @param storageCapacityTo 
 	 * @return
 	 */
 	@Transactional
@@ -101,28 +58,25 @@ public class CenterInfoService {
 		int storageCapacityToInt = 0;
 
 		if (storageCapacityFrom != null && storageCapacityTo != null) {
-			// String型で渡って来た値をint型に型変換
 			try {
+				// String型で渡って来た値をint型に型変換
 				storageCapacityFromInt = Integer.parseInt(storageCapacityFrom);
 			} catch (NumberFormatException e) {
 				// 容量の最小値を設定
 				storageCapacityFromInt = FormParams.CENTER_INFO_MIN_CAPACITY;
 			}
 			try {
+				// String型で渡って来た値をint型に型変換
 				storageCapacityToInt = Integer.parseInt(storageCapacityTo);
 			} catch (NumberFormatException e) {
 				// 容量の最大値を設定
 				storageCapacityToInt = FormParams.CENTER_INFO_MAX_CAPACITY;
 			}
-
 		}
 
 		// 検索結果取得
-		List<CenterInfo> centerInfoList = repository.findByCenterNameAndRegionAndStorageCapacity(centerName, region,
+		return repository.findByCenterNameAndRegionAndStorageCapacity(centerName, region,
 				storageCapacityFromInt, storageCapacityToInt);
-
-		return centerInfoList;
-
 	}
 
 	/**
@@ -133,92 +87,79 @@ public class CenterInfoService {
 	 */
 	@Transactional
 	public void registerCenterInfoData(CenterInfoRegisterForm form) {
+		// Entity初期化
 		CenterInfo centerInfo = new CenterInfo();
+
+		// フォームで受けた入力をEntityに変換
 		centerInfo.setCenterName(form.getCenterName());
 		centerInfo.setPostCode(form.getPostCode());
 		centerInfo.setAddress(form.getAddress());
 		centerInfo.setPhoneNumber(form.getPhoneNumber());
 		centerInfo.setManagerName(form.getManagerName());
 		centerInfo.setOperationalStatus(0);
-		centerInfo.setMaxStorageCapacity(form.getMaxStorageCapacity());
-		centerInfo.setCurrentStorageCapacity(form.getCurrentStorageCapacity());
+		int maxStorageCapacity = Integer.parseInt(form.getMaxStorageCapacity());
+		centerInfo.setMaxStorageCapacity(maxStorageCapacity);
+		int currentStorageCapacity = Integer.parseInt(form.getCurrentStorageCapacity());
+		centerInfo.setMaxStorageCapacity(currentStorageCapacity);
 		centerInfo.setDeleteFlag(0);
 		centerInfo.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		centerInfo.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		
+		// 登録
 		repository.save(centerInfo);
 	}
 
 	/**
 	 * 編集/削除対象検索処理
 	 * 
-	 * @param centerInfoRegisterForm
+	 * @param id
 	 * @return
 	 */
 	@Transactional
 	public Optional<CenterInfo> findById(int id) {
 
+		// センターIDをもとにレコードを検索
 		return repository.findById(id);
 	}
 
-	//	/**
-	//	 * 在庫センター情報作成
-	//	 * 
-	//	 * @return
-	//	 */
-	//	private List<CenterInfo> createCenterInfo() {
-	//
-	//		List<CenterInfo> centerInfoList = new ArrayList<>();
-	//
-	//		// 1コード目作成
-	//		CenterInfo centerInfo = new CenterInfo();
-	//		centerInfo.setCenterName("東京物流センター");
-	//		centerInfo.setAddress("東京都港区芝公園4-2-8");
-	//		centerInfo.setPhoneNumber("03-1234-5678");
-	//		centerInfo.setManagerName("田中 太郎");
-	//		centerInfoList.add(centerInfo);
-	//
-	//		// 2コード目作成
-	//		centerInfo = new CenterInfo();
-	//		centerInfo.setCenterName("大阪物流センター");
-	//		centerInfo.setAddress("大阪府大阪市北区梅田1-1-3");
-	//		centerInfo.setPhoneNumber("06-8765-4321");
-	//		centerInfo.setManagerName("鈴木 一郎");
-	//		centerInfoList.add(centerInfo);
-	//
-	//		// 3コード目作成
-	//		centerInfo = new CenterInfo();
-	//		centerInfo.setCenterName("名古屋物流センター");
-	//		centerInfo.setAddress("愛知県名古屋市中村区名駅3-2-1");
-	//		centerInfo.setPhoneNumber("052-123-4567");
-	//		centerInfo.setManagerName("佐藤 花子");
-	//		centerInfoList.add(centerInfo);
-	//
-	//		// 4コード目作成
-	//		centerInfo = new CenterInfo();
-	//		centerInfo.setCenterName("仙台物流センター");
-	//		centerInfo.setAddress("宮城県仙台市青葉区一番町4-4-1");
-	//		centerInfo.setPhoneNumber("022-234-5678");
-	//		centerInfo.setManagerName("中田 太郎");
-	//		centerInfoList.add(centerInfo);
-	//
-	//		// 5コード目作成
-	//		centerInfo = new CenterInfo();
-	//		centerInfo.setCenterName("福岡物流センター");
-	//		centerInfo.setAddress("福岡県福岡市博多区博多駅前2-1-1");
-	//		centerInfo.setPhoneNumber("092-234-5678");
-	//		centerInfo.setManagerName("近藤 一郎");
-	//		centerInfoList.add(centerInfo);
-	//
-	//		// 6コード目作成
-	//		centerInfo = new CenterInfo();
-	//		centerInfo.setCenterName("北海道物流センター");
-	//		centerInfo.setAddress("北海道札幌市中央区大通西3-6");
-	//		centerInfo.setPhoneNumber("011-234-5678");
-	//		centerInfo.setManagerName("小池 花子");
-	//		centerInfoList.add(centerInfo);
-	//
-	//		return centerInfoList;
-	//	}
+	/**
+	 * 編集処理
+	 * 
+	 * @param centerInfoRegisterForm
+	 * @return
+	 */
+	@Transactional
+	public void updateCenterInfoData(Optional<CenterInfo> centerInfo, CenterInfoRegisterForm form) {
+
+		// フォームで受けた入力をEntityに変換
+		centerInfo.get().setCenterName(form.getCenterName());
+		centerInfo.get().setPostCode(form.getPostCode());
+		centerInfo.get().setAddress(form.getAddress());
+		centerInfo.get().setPhoneNumber(form.getPhoneNumber());
+		centerInfo.get().setManagerName(form.getManagerName());
+		centerInfo.get().setOperationalStatus(0);
+		int maxStorageCapacity = Integer.parseInt(form.getMaxStorageCapacity());
+		centerInfo.get().setMaxStorageCapacity(maxStorageCapacity);
+		int currentStorageCapacity = Integer.parseInt(form.getCurrentStorageCapacity());
+		centerInfo.get().setMaxStorageCapacity(currentStorageCapacity);
+		centerInfo.get().setDeleteFlag(0);
+		centerInfo.get().setUpdateDate(new Timestamp(System.currentTimeMillis()));
+
+		// 更新
+		repository.save(centerInfo.get());
+	}
+
+	/**
+	 * 削除処理
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@Transactional
+	public void deleteById(int id) {
+
+		// センターIDをもとにレコードを削除
+		repository.deleteById(id);
+	}
 
 }

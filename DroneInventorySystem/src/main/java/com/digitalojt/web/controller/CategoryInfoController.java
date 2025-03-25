@@ -96,19 +96,4 @@ public class CategoryInfoController extends AbstractController {
 		return "admin/categoryInfo/index";
 	}
 
-	//	/**
-	//	 * 分類名リスト格納
-	//	 */
-	//	public void inputCategoryList() {
-	//		categoryList.add(ItemCategory.FRAME);
-	//		categoryList.add(ItemCategory.PROPELLER);
-	//		categoryList.add(ItemCategory.ELECTRIC_MOTOR);
-	//		categoryList.add(ItemCategory.ELECTRONIC_SPEED_CONTROLLER);
-	//		categoryList.add(ItemCategory.BATTERY);
-	//		categoryList.add(ItemCategory.FLIGHT_CONTROLLER);
-	//		categoryList.add(ItemCategory.REMOTE_CONTROLLER);
-	//		categoryList.add(ItemCategory.RECEIVER);
-	//		categoryList.add(ItemCategory.GPS_MODULE);
-	//		categoryList.add(ItemCategory.CAMERA_SENSOR);
-	//	}
 }

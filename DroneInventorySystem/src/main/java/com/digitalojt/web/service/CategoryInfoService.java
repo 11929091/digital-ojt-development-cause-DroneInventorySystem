@@ -33,9 +33,7 @@ public class CategoryInfoService {
 	public List<CategoryInfo> getCategoryInfoList() {
 
 		// Repositoryクラスからデータベースにアクセスし、全件検索。
-		List<CategoryInfo> categoryInfoList = repository.findAll();
-
-		return categoryInfoList;
+		return repository.findAll();
 	}
 
 	/**

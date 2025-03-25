@@ -17,22 +17,22 @@
 		<div class="card-body">
 			
 			<!-- 削除確認画面 -->
-			<div class="register-container">
-				<form class="register-container d-flex justify-content-center align-items-center" method="post" th:action="@{'/admin/centerInfo/delete/display'}" th:object="${CenterInfo}" style="white-space: nowrap;">
+			<div class="form-container">
+				<form class="register-container d-flex justify-content-center align-items-center" method="post" th:action="@{'/admin/centerInfo/delete/' + ${centerInfo.centerId}}" th:object="${CenterInfo}" style="white-space: nowrap;">
 					<p>センター名</p>
-					<p> [[${centerInfo.centerName}]] </p>
+					<span class="border border-secondary p-2 rounded">[[${centerInfo.centerName}]]</span>
 					<p>郵便番号</p>
-					<p> [[${centerInfo.postCode}]] </p>
+					<span class="border border-secondary p-2 rounded">[[${centerInfo.postCode}]]</span>
 					<p>住所</p>
-					<p> [[${centerInfo.address}]] </p>
+					<span class="border border-secondary p-2 rounded">[[${centerInfo.address}]]</span>
 					<p>電話番号</p>
-					<p> [[${centerInfo.phoneNumber}]] </p>
+					<span class="border border-secondary p-2 rounded">[[${centerInfo.phoneNumber}]]</span>
 					<p>管理者名</p>
-					<p> [[${centerInfo.managerName}]] </p>
+					<span class="border border-secondary p-2 rounded">[[${centerInfo.managerName}]]</span>
 					<p>最大容量</p>
-					<p> [[${centerInfo.maxStorageCapacity}]] </p>
+					<span class="border border-secondary p-2 rounded">[[${centerInfo.maxStorageCapacity}]]</span>
 					<p>現在容量</p>
-					<p> [[${centerInfo.currentStorageCapacity}]] </p>
+					<span class="border border-secondary p-2 rounded">[[${centerInfo.currentStorageCapacity}]]</span>
 					
  					<button type="submit" class="btn btn-primary">削除</button>
  				</form>
@@ -46,7 +46,7 @@
  				
 			</div>
 			<div class="table-responsive">
-				<a href="@{centerInfo/index}" class="register">▶︎戻る</a>
+				<a th:href="@{/admin/centerInfo}" class="move">▶︎戻る</a>
 			</div>
 		</div>
 	</div>

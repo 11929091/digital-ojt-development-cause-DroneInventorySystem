@@ -32,8 +32,17 @@ public class UrlConsts {
 	// 在庫センター情報画面 登録
 	public static final String CENTER_INFO_REGISTER = "/admin/centerInfo/register";
 
+	// 在庫センター情報画面 編集画面表示
+	public static final String CENTER_INFO_UPDATE_DISPLAY = "/admin/centerInfo/update/display";
+
+	// 在庫センター情報画面 編集
+	public static final String CENTER_INFO_UPDATE = "/admin/centerInfo/update";
+
 	// 在庫センター情報画面 削除画面表示
 	public static final String CENTER_INFO_DELETE_DISPLAY = "/admin/centerInfo/delete/display";
+
+	// 在庫センター情報画面 削除
+	public static final String CENTER_INFO_DELETE = "/admin/centerInfo/delete";
 
 	// 認証不要画面
 	public static final String[] NO_AUTHENTICATION = {LOGIN, AUTHENTICATE};

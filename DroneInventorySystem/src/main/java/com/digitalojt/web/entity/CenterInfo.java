@@ -2,11 +2,11 @@ package com.digitalojt.web.entity;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * センター情報Entity
@@ -15,8 +15,6 @@ import lombok.Setter;
  *
  */
 @Data
-@Getter
-@Setter
 @Entity
 public class CenterInfo {
 
@@ -79,5 +77,6 @@ public class CenterInfo {
 	/**
 	 * 登録日
 	 */
+	@CreationTimestamp
 	private Timestamp createDate;
 }

@@ -42,10 +42,10 @@ public class CenterInfoRegisterForm {
 	/**
 	 * 最大容量
 	 */
-	private Integer maxStorageCapacity;
+	private String maxStorageCapacity;
 
 	/**
 	 * 現在容量
 	 */
-	private Integer currentStorageCapacity;
+	private String currentStorageCapacity;
 }

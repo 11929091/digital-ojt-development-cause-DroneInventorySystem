@@ -17,22 +17,22 @@
 		<div class="card-body">
 			
 			<!-- 登録フォーム -->
-			<div class="register-container">
+			<div class="form-container">
 				<form class="register-container d-flex justify-content-center align-items-center" method="post" th:action="@{'/admin/centerInfo/register'}" th:object="${CenterInfoForm}" style="white-space: nowrap;">
 					<p>センター名</p>
-					<input type="text" id="centerName" name="centerName" class="form-control mr-2">
+					<span><input type="text" id="centerName" name="centerName" class="form-control mr-2"></span>
 					<p>郵便番号</p>
-					<input type="text" id="postCode" name="postCode" class="form-control mr-2">
+					<span><input type="text" id="postCode" name="postCode" class="form-control mr-2"></span>
 					<p>住所</p>
-					<input type="text" id="address" name="address" class="form-control mr-2">
+					<span><input type="text" id="address" name="address" class="form-control mr-2"></span>
 					<p>電話番号</p>
-					<input type="text" id="phoneNumber" name="phoneNumber" class="form-control mr-2">
+					<span><input type="text" id="phoneNumber" name="phoneNumber" class="form-control mr-2"></span>
 					<p>管理者名</p>
-					<input type="text" id="managerName" name="managerName" class="form-control mr-2">
+					<span><input type="text" id="managerName" name="managerName" class="form-control mr-2"></span>
 					<p>最大容量</p>
-					<input type="text" id="maxStorageCapacity" name="maxStorageCapacity" class="form-control mr-2">
+					<span><input type="text" id="maxStorageCapacity" name="maxStorageCapacity" class="form-control mr-2"></span>
 					<p>現在容量</p>
-					<input type="text" id="currentStorageCapacity" name="currentStorageCapacity" class="form-control mr-2">
+					<span><input type="text" id="currentStorageCapacity" name="currentStorageCapacity" class="form-control mr-2"></span>
 					
  					<button type="submit" class="btn btn-primary">登録</button>
  				</form>
@@ -46,7 +46,7 @@
  				
 			</div>
 			<div class="table-responsive">
-				<a href="@{centerInfo/index}" class="register">▶︎戻る</a>
+				<a th:href="@{/admin/centerInfo}" class="move">▶︎戻る</a>
 			</div>
 		</div>
 	</div>

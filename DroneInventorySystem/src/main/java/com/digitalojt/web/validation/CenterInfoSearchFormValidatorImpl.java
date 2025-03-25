@@ -62,6 +62,7 @@ public class CenterInfoSearchFormValidatorImpl implements ConstraintValidator<Ce
 				return false;
 			}
 		}
+
 		// 容量の入力チェック
 		// 容量(From)
 		int storageCapacityFrom = 0;
