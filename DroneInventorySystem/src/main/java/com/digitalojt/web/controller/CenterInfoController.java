@@ -145,6 +145,8 @@ public class CenterInfoController {
 	@GetMapping(UrlConsts.CENTER_INFO_REGISTER_DISPLAY)
 	public String registerDisplay(Model model) {
 
+		model.addAttribute("centerInfoRegisterForm", new CenterInfoRegisterForm());
+
 		// 登録フォーム入力画面へ
 		return "admin/centerInfo/register";
 	}

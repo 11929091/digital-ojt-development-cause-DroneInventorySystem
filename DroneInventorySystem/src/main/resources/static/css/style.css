@@ -67,8 +67,11 @@ button {
 	margin-left: 50px;
 }
 
-.errorMsg {
-	text-align: center;
+.custom-alert-compact {
+	height: 40px;
+	padding: auto;
+	font-size: 17px;
+	margin-bottom: 15px;
 }
 
 .table-body {

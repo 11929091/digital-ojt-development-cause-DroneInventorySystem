@@ -100,7 +100,7 @@ public class CenterInfoService {
 		int maxStorageCapacity = Integer.parseInt(form.getMaxStorageCapacity());
 		centerInfo.setMaxStorageCapacity(maxStorageCapacity);
 		int currentStorageCapacity = Integer.parseInt(form.getCurrentStorageCapacity());
-		centerInfo.setMaxStorageCapacity(currentStorageCapacity);
+		centerInfo.setCurrentStorageCapacity(currentStorageCapacity);
 		centerInfo.setDeleteFlag(0);
 		centerInfo.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		centerInfo.setCreateDate(new Timestamp(System.currentTimeMillis()));
@@ -141,7 +141,7 @@ public class CenterInfoService {
 		int maxStorageCapacity = Integer.parseInt(form.getMaxStorageCapacity());
 		centerInfo.get().setMaxStorageCapacity(maxStorageCapacity);
 		int currentStorageCapacity = Integer.parseInt(form.getCurrentStorageCapacity());
-		centerInfo.get().setMaxStorageCapacity(currentStorageCapacity);
+		centerInfo.get().setCurrentStorageCapacity(currentStorageCapacity);
 		centerInfo.get().setDeleteFlag(0);
 		centerInfo.get().setUpdateDate(new Timestamp(System.currentTimeMillis()));
 

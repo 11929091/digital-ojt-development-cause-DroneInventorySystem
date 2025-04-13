@@ -37,13 +37,6 @@
  					<button type="submit" class="btn btn-primary">削除</button>
  				</form>
  				
-				<!-- エラーメッセージの表示 -->
-				<div class="errorMsg">
-					<div th:if="${errorMsg != null}" class="text-danger">
-						<p th:text="${errorMsg}"></p>
-					</div>
-				</div>
- 				
 			</div>
 			<div class="table-responsive">
 				<a th:href="@{/admin/centerInfo}" class="move">▶︎戻る</a>

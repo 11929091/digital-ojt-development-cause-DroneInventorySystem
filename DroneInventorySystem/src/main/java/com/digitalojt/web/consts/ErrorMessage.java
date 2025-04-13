@@ -35,23 +35,23 @@ public class ErrorMessage {
 	// 在庫センター情報_郵便番号空文字に関するエラーメッセージ
 	public static final String POST_CODE_EMPTY_ERROR_MESSAGE = "postCode.empty";
 
-	// 在庫センター情報_郵便番号文字数に関するエラーメッセージ
-	public static final String POST_CODE_LENGTH_ERROR_MESSAGE = "postCode.length.wrongInput";
-
-	// 在庫センター情報_郵便番号不正文字入力検知に関するエラーメッセージ
-	public static final String POST_CODE_INVALID_INPUT_ERROR_MESSAGE = "postCode.wrongInput";
-
 	// 在庫センター情報_住所空文字に関するエラーメッセージ
 	public static final String ADDRESS_EMPTY_ERROR_MESSAGE = "address.empty";
 
 	// 在庫センター情報_電話番号空文字に関するエラーメッセージ
 	public static final String PHONE_NUMBER_EMPTY_ERROR_MESSAGE = "phoneNumber.empty";
 
-	// 在庫センター情報_電話番号不正文字入力検知に関するエラーメッセージ
-	public static final String PHONE_NUMBER_INVALID_INPUT_ERROR_MESSAGE = "phoneNumber.wrongInput";
-
 	// 在庫センター情報_管理者名空文字に関するエラーメッセージ
 	public static final String MANAGER_NAME_EMPTY_ERROR_MESSAGE = "managerName.empty";
+
+	// 在庫センター情報_最大容量空文字に関するエラーメッセージ
+	public static final String MAX_STORAGE_EMPTY_ERROR_MESSAGE = "maxStorageCapacity.empty";
+
+	// 在庫センター情報_現在容量空文字に関するエラーメッセージ
+	public static final String CURRENT_STORAGE_EMPTY_ERROR_MESSAGE = "currentStorageCapacity.empty";
+
+	// 在庫センター情報_現在容量空文字に関するエラーメッセージ
+	public static final String CURRENT_STORAGE_CHECK_INPUT_VALUE_ERROR_MESSAGE = "currentStorageCapacity.checkInputValue";
 
 	// 在庫センター情報_容量入力に関するエラーメッセージ
 	public static final String STORAGE_CAPACITY_WRONG_INPUT_ERROR_MESSAGE = "storageCapacity.wrongInput";

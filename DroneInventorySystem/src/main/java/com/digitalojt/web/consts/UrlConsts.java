@@ -24,7 +24,7 @@ public class UrlConsts {
 	public static final String  CENTER_INFO = "/admin/centerInfo";
 
 	// 在庫センター情報画面 検索
-	public static final String CENTER_INFO_SEARCH = "/admin/centerInfo/search";
+	public static final String CENTER_INFO_SEARCH = "/admin/search";
 
 	// 在庫センター情報画面 登録画面表示
 	public static final String CENTER_INFO_REGISTER_DISPLAY = "/admin/centerInfo/register/display";

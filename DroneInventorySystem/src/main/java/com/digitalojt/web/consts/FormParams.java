@@ -14,12 +14,15 @@ public class FormParams {
 	// 在庫センター情報_最大文字数
 	public static final int CENTER_INFO_MAX_LENGTH = 20;
 
-	// 在庫センター情報_最大文字数
-	public static final int CENTER_INFO_POST_CODE_LENGTH = 7;
-
 	// 在庫センター情報_最小容量
 	public static final int CENTER_INFO_MIN_CAPACITY = 0;
 
 	// 在庫センター情報_最大容量
 	public static final int CENTER_INFO_MAX_CAPACITY = 1000;
+
+	// 在庫一覧_最小在庫数
+	public static final int STOCK_LIST_MIN_AMOUNT = 0;
+
+	// 在庫一覧_最大在庫数
+	public static final int STOCK_LIST_MAX_AMOUNT = 10000;
 }

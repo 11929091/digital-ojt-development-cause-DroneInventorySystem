@@ -61,26 +61,6 @@ public class CenterInfoRegisterFormValidatorImpl
 				return false;
 			}
 
-			// 文字数チェック
-			if (form.getPostCode().length() != FormParams.CENTER_INFO_POST_CODE_LENGTH) {
-				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(ErrorMessage.POST_CODE_LENGTH_ERROR_MESSAGE)
-						.addConstraintViolation();
-				return false;
-			}
-
-			// 数値入力チェック
-			int postCode = 0;
-
-			try {
-				postCode = Integer.parseInt(form.getPostCode());
-			} catch (NumberFormatException e) {
-				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(ErrorMessage.POST_CODE_INVALID_INPUT_ERROR_MESSAGE)
-						.addConstraintViolation();
-				return false;
-			}
-
 			// 不正文字列チェック
 			if (ParmCheckUtil.isParameterInvalid(form.getPostCode())) {
 				context.disableDefaultConstraintViolation();
@@ -96,7 +76,7 @@ public class CenterInfoRegisterFormValidatorImpl
 			// 住所の入力がない場合
 			if (form.getAddress().isEmpty()) {
 				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(ErrorMessage.CENTER_NAME_EMPTY_ERROR_MESSAGE)
+				context.buildConstraintViolationWithTemplate(ErrorMessage.ADDRESS_EMPTY_ERROR_MESSAGE)
 						.addConstraintViolation();
 				return false;
 			}
@@ -117,18 +97,6 @@ public class CenterInfoRegisterFormValidatorImpl
 			if (form.getPhoneNumber().isEmpty()) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate(ErrorMessage.PHONE_NUMBER_EMPTY_ERROR_MESSAGE)
-						.addConstraintViolation();
-				return false;
-			}
-
-			// 数値入力チェック
-			int phoneNumber = 0;
-
-			try {
-				phoneNumber = Integer.parseInt(form.getPhoneNumber());
-			} catch (NumberFormatException e) {
-				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(ErrorMessage.PHONE_NUMBER_INVALID_INPUT_ERROR_MESSAGE)
 						.addConstraintViolation();
 				return false;
 			}
@@ -179,7 +147,13 @@ public class CenterInfoRegisterFormValidatorImpl
 						.addConstraintViolation();
 				return false;
 			}
+		} else {
+			context.disableDefaultConstraintViolation();
+			context.buildConstraintViolationWithTemplate(ErrorMessage.MAX_STORAGE_EMPTY_ERROR_MESSAGE)
+					.addConstraintViolation();
+			return false;
 		}
+
 		// 現在容量に入力があれば
 		if (!form.getCurrentStorageCapacity().isEmpty()) {
 			try {
@@ -191,6 +165,20 @@ public class CenterInfoRegisterFormValidatorImpl
 						.addConstraintViolation();
 				return false;
 			}
+		} else {
+			context.disableDefaultConstraintViolation();
+			context.buildConstraintViolationWithTemplate(ErrorMessage.CURRENT_STORAGE_EMPTY_ERROR_MESSAGE)
+					.addConstraintViolation();
+			return false;
+		}
+
+		// 最大容量より、現在容量が大きい場合
+		if (maxStorageCapacity < currentStoroageCapacity) {
+			context.disableDefaultConstraintViolation();
+			context.buildConstraintViolationWithTemplate(
+					ErrorMessage.CURRENT_STORAGE_CHECK_INPUT_VALUE_ERROR_MESSAGE)
+					.addConstraintViolation();
+			return false;
 		}
 
 		// その他のバリデーションに問題なければtrueを返す
