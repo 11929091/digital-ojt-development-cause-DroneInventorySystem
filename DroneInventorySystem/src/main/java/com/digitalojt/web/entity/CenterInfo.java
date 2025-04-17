@@ -2,11 +2,11 @@ package com.digitalojt.web.entity;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * センター情報Entity
@@ -15,8 +15,6 @@ import lombok.Setter;
  *
  */
 @Data
-@Getter
-@Setter
 @Entity
 public class CenterInfo {
 
@@ -31,6 +29,11 @@ public class CenterInfo {
 	 */
 	private String centerName;
 	
+	/**
+	 * 郵便番号
+	 */
+	private String postCode;
+
 	/**
 	 * 住所
 	 */
@@ -54,17 +57,17 @@ public class CenterInfo {
 	/**
 	 * 最大容量
 	 */
-	private String maxStorageCapacity;
+	private Integer maxStorageCapacity;
 	
 	/**
 	 * 現在容量
 	 */
-	private String currentStorageCapacity;
+	private Integer currentStorageCapacity;
 	
 	/**
 	 * 論理削除フラグ
 	 */
-	private String deleteFlag;
+	private int deleteFlag;
 
 	/**
 	 * 更新日
@@ -74,5 +77,6 @@ public class CenterInfo {
 	/**
 	 * 登録日
 	 */
+	@CreationTimestamp
 	private Timestamp createDate;
 }

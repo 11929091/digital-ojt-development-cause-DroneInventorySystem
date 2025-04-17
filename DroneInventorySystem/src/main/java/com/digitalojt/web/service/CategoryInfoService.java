@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.digitalojt.web.entity.CategoryInfo;
 import com.digitalojt.web.repository.CategoryInfoRepository;
@@ -28,12 +29,11 @@ public class CategoryInfoService {
 	 * 
 	 * @return 分類名情報全件データ
 	 */
+	@Transactional
 	public List<CategoryInfo> getCategoryInfoList() {
 
 		// Repositoryクラスからデータベースにアクセスし、全件検索。
-		List<CategoryInfo> categoryInfoList = repository.findAll();
-
-		return categoryInfoList;
+		return repository.findAll();
 	}
 
 	/**
@@ -42,6 +42,7 @@ public class CategoryInfoService {
 	 * @param categoryName 検索分類名
 	 * @return 分類名情報検索データ
 	 */
+	@Transactional
 	public List<CategoryInfo> searchCategoryInfo(String categoryName) {
 		// Repositoryクラスからデータベースにアクセスし、検索結果取得
 		return repository.findByCategoryName(categoryName);

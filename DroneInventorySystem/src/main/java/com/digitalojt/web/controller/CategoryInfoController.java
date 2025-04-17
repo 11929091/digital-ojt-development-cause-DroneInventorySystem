@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,10 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.digitalojt.web.consts.UrlConsts;
 import com.digitalojt.web.entity.CategoryInfo;
-import com.digitalojt.web.form.SearchForm;
+import com.digitalojt.web.form.CategoryInfoForm;
 import com.digitalojt.web.service.CategoryInfoService;
+import com.digitalojt.web.util.MessageManager;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 
 /**
  * 分割情報管理画面 Controller
@@ -24,11 +27,15 @@ import jakarta.validation.Valid;
  * @author Kazuma Kuroki
  */
 @Controller
+@RequiredArgsConstructor
 public class CategoryInfoController extends AbstractController {
 
 	/** 分類情報管理画面 Service */
 	@Autowired
 	private CategoryInfoService service;
+
+	/** メッセージソース */
+	private final MessageSource messageSource;
 
 	/** 分類名リスト初期化 */
 	private List<CategoryInfo> categoryInfoList = new ArrayList<>();
@@ -50,7 +57,7 @@ public class CategoryInfoController extends AbstractController {
 
 		// Modelに格納
 		model.addAttribute("categoryInfo", categoryInfoList);
-		model.addAttribute("searchForm", new SearchForm());
+		model.addAttribute("CategoryInfoForm", new CategoryInfoForm());
 
 		return "admin/categoryInfo/index";
 	}
@@ -64,37 +71,29 @@ public class CategoryInfoController extends AbstractController {
 	 * @return
 	 */
 	@PostMapping(UrlConsts.CATEGORY_INFO_SEARCH)
-	public String searchCategory(@Valid @ModelAttribute("searchForm") SearchForm searchForm,
-			BindingResult result, Model model) {
+	public String search(@Valid @ModelAttribute("CategoryInfoForm") CategoryInfoForm form,
+			BindingResult bindingResult, Model model) {
 
 		// 入力値が不正であれば、エラーメッセージと初期画面を表示
-		if (result.hasErrors()) {
+		if (bindingResult.hasErrors()) {
+
+			// エラーメッセージをプロパティファイルから取得
+			String errorMsg = MessageManager.getMessage(messageSource,
+					bindingResult.getGlobalError().getDefaultMessage());
+			model.addAttribute("errorMsg", errorMsg);
+
+			// 分類名初期表示リスト
 			model.addAttribute("categoryInfo", categoryInfoList);
 
 			return "admin/categoryInfo/index";
 		}
 
 		// 分類名検索結果を取得
-		List<CategoryInfo> categoryInfo = service.searchCategoryInfo(searchForm.getCategoryName());
+		List<CategoryInfo> categoryInfo = service.searchCategoryInfo(form.getCategoryName());
 		// 検索結果をModelに格納
 		model.addAttribute("categoryInfo", categoryInfo);
 
 		return "admin/categoryInfo/index";
 	}
 
-	//	/**
-	//	 * 分類名リスト格納
-	//	 */
-	//	public void inputCategoryList() {
-	//		categoryList.add(ItemCategory.FRAME);
-	//		categoryList.add(ItemCategory.PROPELLER);
-	//		categoryList.add(ItemCategory.ELECTRIC_MOTOR);
-	//		categoryList.add(ItemCategory.ELECTRONIC_SPEED_CONTROLLER);
-	//		categoryList.add(ItemCategory.BATTERY);
-	//		categoryList.add(ItemCategory.FLIGHT_CONTROLLER);
-	//		categoryList.add(ItemCategory.REMOTE_CONTROLLER);
-	//		categoryList.add(ItemCategory.RECEIVER);
-	//		categoryList.add(ItemCategory.GPS_MODULE);
-	//		categoryList.add(ItemCategory.CAMERA_SENSOR);
-	//	}
 }
