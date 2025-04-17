@@ -111,6 +111,21 @@
   			<version>5.11.0</version>
   			<scope>test</scope>
 		</dependency>
+		
+		<!-- Logback -->
+		<dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
 	</dependencies>
 	
 	<build>

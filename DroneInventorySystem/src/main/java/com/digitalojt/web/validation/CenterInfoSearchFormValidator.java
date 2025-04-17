@@ -15,10 +15,10 @@ import jakarta.validation.Payload;
  * 
  * @author Kazuma Kuroki
  */
-@Constraint(validatedBy = CenterInfoFormValidatorImpl.class)
+@Constraint(validatedBy = CenterInfoSearchFormValidatorImpl.class)
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CenterInfoFormValidator {
+public @interface CenterInfoSearchFormValidator {
 
 	String message() default ErrorMessage.ALL_FIELDS_EMPTY_ERROR_MESSAGE;
 

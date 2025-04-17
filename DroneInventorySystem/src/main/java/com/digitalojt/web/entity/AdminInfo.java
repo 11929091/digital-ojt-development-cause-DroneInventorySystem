@@ -3,8 +3,6 @@ package com.digitalojt.web.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * 管理者情報Entity
@@ -13,8 +11,6 @@ import lombok.Setter;
  *
  */
 @Data
-@Getter
-@Setter
 @Entity
 public class AdminInfo {
 
