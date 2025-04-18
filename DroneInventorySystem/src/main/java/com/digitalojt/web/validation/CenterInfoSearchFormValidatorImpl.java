@@ -73,7 +73,8 @@ public class CenterInfoSearchFormValidatorImpl implements ConstraintValidator<Ce
 		if (!form.getStorageCapacityFrom().isEmpty()) {
 			try {
 				// String型→int型への型変換に失敗すればエラーメッセージを表示
-				storageCapacityFrom = Integer.parseInt(form.getStorageCapacityFrom());
+				double fromValue = Double.parseDouble(form.getStorageCapacityFrom());
+				storageCapacityFrom = (int) Math.ceil(fromValue);
 			} catch (NumberFormatException e) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate(
@@ -86,7 +87,8 @@ public class CenterInfoSearchFormValidatorImpl implements ConstraintValidator<Ce
 		if (!form.getStorageCapacityTo().isEmpty()) {
 			try {
 				// String型→int型への型変換に失敗すればエラーメッセージを表示
-				storoageCapacityTo = Integer.parseInt(form.getStorageCapacityTo());
+				double ToValue = Double.parseDouble(form.getStorageCapacityTo());
+				storoageCapacityTo = (int) Math.floor(ToValue);
 				// 容量(From) < 容量(To) の場合、エラーメッセージを表示
 				if (storageCapacityFrom > storoageCapacityTo) {
 					context.disableDefaultConstraintViolation();

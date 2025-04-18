@@ -139,7 +139,8 @@ public class CenterInfoRegisterFormValidatorImpl
 		// 最大容量に入力があれば
 		if (!form.getMaxStorageCapacity().isEmpty()) {
 			try {
-				maxStorageCapacity = Integer.parseInt(form.getMaxStorageCapacity());
+				double maxStorageValue = Double.parseDouble(form.getMaxStorageCapacity());
+				maxStorageCapacity = (int) Math.round(maxStorageValue);
 			} catch (NumberFormatException e) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate(
@@ -157,7 +158,8 @@ public class CenterInfoRegisterFormValidatorImpl
 		// 現在容量に入力があれば
 		if (!form.getCurrentStorageCapacity().isEmpty()) {
 			try {
-				currentStoroageCapacity = Integer.parseInt(form.getCurrentStorageCapacity());
+				double currentStorageValue = Double.parseDouble(form.getCurrentStorageCapacity());
+				currentStoroageCapacity = (int) Math.round(currentStorageValue);
 			} catch (NumberFormatException e) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate(
