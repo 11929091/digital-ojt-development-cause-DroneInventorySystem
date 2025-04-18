@@ -60,14 +60,16 @@ public class CenterInfoService {
 		if (storageCapacityFrom != null && storageCapacityTo != null) {
 			try {
 				// String型で渡って来た値をint型に型変換
-				storageCapacityFromInt = Integer.parseInt(storageCapacityFrom);
+				double fromValue = Double.parseDouble(storageCapacityFrom);
+				storageCapacityFromInt = (int) Math.ceil(fromValue);
 			} catch (NumberFormatException e) {
 				// 容量の最小値を設定
 				storageCapacityFromInt = FormParams.CENTER_INFO_MIN_CAPACITY;
 			}
 			try {
 				// String型で渡って来た値をint型に型変換
-				storageCapacityToInt = Integer.parseInt(storageCapacityTo);
+				double ToValue = Double.parseDouble(storageCapacityTo);
+				storageCapacityToInt = (int) Math.floor(ToValue);
 			} catch (NumberFormatException e) {
 				// 容量の最大値を設定
 				storageCapacityToInt = FormParams.CENTER_INFO_MAX_CAPACITY;
@@ -97,9 +99,13 @@ public class CenterInfoService {
 		centerInfo.setPhoneNumber(form.getPhoneNumber());
 		centerInfo.setManagerName(form.getManagerName());
 		centerInfo.setOperationalStatus(0);
-		int maxStorageCapacity = Integer.parseInt(form.getMaxStorageCapacity());
+		// 小数点が含まれる場合、四捨五入
+		double maxStorageValue = Double.parseDouble(form.getMaxStorageCapacity());
+		int maxStorageCapacity = (int) Math.round(maxStorageValue);
 		centerInfo.setMaxStorageCapacity(maxStorageCapacity);
-		int currentStorageCapacity = Integer.parseInt(form.getCurrentStorageCapacity());
+		// 小数点が含まれる場合、四捨五入
+		double currentStorageValue = Double.parseDouble(form.getCurrentStorageCapacity());
+		int currentStorageCapacity = (int) Math.round(currentStorageValue);
 		centerInfo.setCurrentStorageCapacity(currentStorageCapacity);
 		centerInfo.setDeleteFlag(0);
 		centerInfo.setUpdateDate(new Timestamp(System.currentTimeMillis()));
