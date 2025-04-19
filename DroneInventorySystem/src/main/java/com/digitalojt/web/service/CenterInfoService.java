@@ -51,7 +51,7 @@ public class CenterInfoService {
 	 * @return
 	 */
 	@Transactional
-	public List<CenterInfo> searchCenterInfoData(String centerName, String region, String storageCapacityFrom,
+	public List<CenterInfo> searchCenterInfo(String centerName, String region, String storageCapacityFrom,
 			String storageCapacityTo) {
 
 		int storageCapacityFromInt = 0;
@@ -88,7 +88,7 @@ public class CenterInfoService {
 	 * @return
 	 */
 	@Transactional
-	public void registerCenterInfoData(CenterInfoRegisterForm form) {
+	public void registerCenterInfo(CenterInfoRegisterForm form) {
 		// Entity初期化
 		CenterInfo centerInfo = new CenterInfo();
 
@@ -135,7 +135,7 @@ public class CenterInfoService {
 	 * @return
 	 */
 	@Transactional
-	public void updateCenterInfoData(Optional<CenterInfo> centerInfo, CenterInfoRegisterForm form) {
+	public void updateCenterInfo(Optional<CenterInfo> centerInfo, CenterInfoRegisterForm form) {
 
 		// フォームで受けた入力をEntityに変換
 		centerInfo.get().setCenterName(form.getCenterName());
