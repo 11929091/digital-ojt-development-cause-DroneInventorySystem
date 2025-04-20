@@ -117,7 +117,7 @@ public class CenterInfoController {
 		}
 
 		// 在庫センター情報画面に表示するデータを取得
-		List<CenterInfo> centerInfoList = service.searchCenterInfoData(form.getCenterName(),
+		List<CenterInfo> centerInfoList = service.searchCenterInfo(form.getCenterName(),
 				form.getRegion(), form.getStorageCapacityFrom(), form.getStorageCapacityTo());
 
 		// 画面表示用に商品情報リストをセット
@@ -182,7 +182,7 @@ public class CenterInfoController {
 		}
 
 		// フォームで受けた入力を登録
-		service.registerCenterInfoData(form);
+		service.registerCenterInfo(form);
 
 		// 終了ログ
 		logger.info("【INFO】時間: {} | 処理対象: 在庫センター情報画面 | 処理内容: 登録処理 | 処理結果: 成功 | 登録内容: {}",
@@ -265,7 +265,7 @@ public class CenterInfoController {
 		}
 
 		// フォームで受けた入力で編集
-		service.updateCenterInfoData(centerInfo, form);
+		service.updateCenterInfo(centerInfo, form);
 
 		// 終了ログ
 		logger.info("【INFO】時間: {} | 処理対象: 在庫センター情報画面 | 処理内容: 更新処理 | 処理結果: 成功 | 更新内容: ID: {}, Name: {}",
