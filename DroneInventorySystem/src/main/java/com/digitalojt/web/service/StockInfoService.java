@@ -1,6 +1,7 @@
 package com.digitalojt.web.service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.digitalojt.web.consts.FormParams;
 import com.digitalojt.web.entity.CategoryInfo;
+import com.digitalojt.web.entity.CenterInfo;
 import com.digitalojt.web.entity.StockInfo;
 import com.digitalojt.web.repository.CategoryInfoRepository;
+import com.digitalojt.web.repository.CenterInfoRepository;
 import com.digitalojt.web.repository.StockInfoRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -28,9 +31,13 @@ public class StockInfoService {
 	@Autowired
 	private final StockInfoRepository stockInfoRepository;
 
-	/** 分類情報管理画面 Repository */
+	/** 分類名情報 Repository */
 	@Autowired
 	private final CategoryInfoRepository categoryInfoRepository;
+
+	/** 在庫センター情報 Repository */
+	@Autowired
+	private final CenterInfoRepository centerInfoRepository;
 
 	/**
 	 * 在庫一覧を全件検索で取得
@@ -52,6 +59,25 @@ public class StockInfoService {
 	public List<CategoryInfo> getCategoryList() {
 
 		return categoryInfoRepository.findAll();
+	}
+
+	/* 分類名情報を取得
+	* 
+	* @return
+	*/
+	@Transactional
+	public List<CategoryInfo> getCategoryNameList() {
+		return stockInfoRepository.getCategoryName();
+	}
+
+	/**
+	 * 保管場所情報を取得
+	 * 
+	 * @return
+	 */
+	@Transactional
+	public List<CenterInfo> getCenterNameList() {
+		return stockInfoRepository.getCenterName();
 	}
 
 	/**
@@ -90,6 +116,29 @@ public class StockInfoService {
 		// 検索結果取得
 		return stockInfoRepository.findByCategoryNameAndNameAndStockAmount(categoryName, name,
 				stockAmountFromInt, stockAmountToInt);
+	}
+
+	/**
+	 * 検索処理（取得した在庫情報を元に、分類名情報を取得）
+	 * 
+	 * @param ids
+	 * @return
+	 */
+	@Transactional
+	public List<CategoryInfo> findCategoriesByIds(Set<Integer> ids) {
+		return categoryInfoRepository.findAllById(ids);
+
+	}
+
+	/**
+	 * 検索処理（取得した在庫情報を元に、在庫センター情報を取得）
+	 * 
+	 * @param ids
+	 * @return
+	 */
+	@Transactional
+	public List<CenterInfo> findCentersByIds(Set<Integer> ids) {
+		return centerInfoRepository.findAllById(ids);
 	}
 
 }

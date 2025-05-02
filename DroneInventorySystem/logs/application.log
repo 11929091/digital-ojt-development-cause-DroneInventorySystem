@@ -1,61 +1,232 @@
-2025-04-20 18:18:42 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Starting DroneInventorySystemApplication using Java 17.0.10 with PID 816 (/Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem/target/classes started by KurokiKazuma in /Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem)
-2025-04-20 18:18:42 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - The following 1 profile is active: "develop"
-2025-04-20 18:18:42 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-20 18:18:42 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-20 18:18:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-20 18:18:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 4 JPA repository interfaces.
-2025-04-20 18:18:44 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-20 18:18:44 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-20 18:18:44 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-04-20 18:18:44 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-2025-04-20 18:18:45 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-04-20 18:18:45 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2694 ms
-2025-04-20 18:18:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-20 18:18:45 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@73bce67c
-2025-04-20 18:18:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-20 18:18:45 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/stock_mng'
-2025-04-20 18:18:46 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-20 18:18:47 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-20 18:18:48 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-04-20 18:18:49 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-20 18:18:49 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2025-05-03 13:58:01 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Starting DroneInventorySystemApplication using Java 17.0.10 with PID 732 (/Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem/target/classes started by KurokiKazuma in /Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem)
+2025-05-03 13:58:01 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - The following 1 profile is active: "develop"
+2025-05-03 13:58:01 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-03 13:58:01 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-03 13:58:02 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-03 13:58:03 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 113 ms. Found 4 JPA repository interfaces.
+2025-05-03 13:58:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-03 13:58:04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-03 13:58:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-03 13:58:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-05-03 13:58:04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-03 13:58:04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2629 ms
+2025-05-03 13:58:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-03 13:58:04 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@671590d5
+2025-05-03 13:58:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-03 13:58:04 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/stock_mng'
+2025-05-03 13:58:05 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-03 13:58:07 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 13:58:08 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-03 13:58:08 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-03 13:58:08 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: cc67d6dd-8167-44f3-b01c-edfb427cff0d
+Using generated security password: 55631548-57bf-43dc-88ac-cb82e3628e22
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-04-20 18:18:49 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7147957f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e8a1522, org.springframework.security.web.context.SecurityContextHolderFilter@5e2983ef, org.springframework.security.web.header.HeaderWriterFilter@3b5affa3, org.springframework.security.web.csrf.CsrfFilter@4b86a004, org.springframework.security.web.authentication.logout.LogoutFilter@5f4cb66, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7ceb7c82, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@148e42cc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@386b3c0f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15d879e2, org.springframework.security.web.access.ExceptionTranslationFilter@80150ce]
-2025-04-20 18:18:50 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2025-04-20 18:18:50 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-20 18:18:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-2025-04-20 18:18:50 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Started DroneInventorySystemApplication in 8.876 seconds (process running for 9.977)
-2025-04-20 18:19:03 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-20 18:19:03 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-20 18:19:03 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-04-20 18:20:00 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1745140800529 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:00 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1745140800775 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:02 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1745140802964 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:03 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1745140803018 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:06 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1745140806530 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:06 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1745140806582 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:12 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1745140812704 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:12 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1745140812715 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:22 [http-nio-8080-exec-9] INFO  APP - 【INFO】時間: 1745140822420 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:22 [http-nio-8080-exec-9] INFO  APP - 【INFO】時間: 1745140822429 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:27 [http-nio-8080-exec-1] INFO  APP - 【INFO】時間: 1745140827336 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:27 [http-nio-8080-exec-1] INFO  APP - 【INFO】時間: 1745140827349 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:31 [http-nio-8080-exec-5] INFO  APP - 【INFO】時間: 1745140831872 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:31 [http-nio-8080-exec-5] INFO  APP - 【INFO】時間: 1745140831878 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:35 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1745140835275 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:35 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1745140835286 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:36 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1745140836194 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:36 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1745140836221 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:37 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1745140837093 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:37 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1745140837100 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:38 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1745140838263 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
-2025-04-20 18:20:38 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1745140838270 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
-2025-04-20 18:20:43 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
-2025-04-20 18:20:43 [RMI TCP Connection(11)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2025-04-20 18:20:43 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-20 18:20:43 [RMI TCP Connection(11)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-20 18:20:43 [RMI TCP Connection(11)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-03 13:58:09 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@121e08e1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4271c5f, org.springframework.security.web.context.SecurityContextHolderFilter@7bdc5a87, org.springframework.security.web.header.HeaderWriterFilter@7f14f48d, org.springframework.security.web.csrf.CsrfFilter@1fbc571c, org.springframework.security.web.authentication.logout.LogoutFilter@7585a2fb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@12609005, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b8a6355, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67c920f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36977414, org.springframework.security.web.access.ExceptionTranslationFilter@2fc3ec0f]
+2025-05-03 13:58:09 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-05-03 13:58:09 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-03 13:58:09 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-03 13:58:09 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Started DroneInventorySystemApplication in 9.11 seconds (process running for 10.277)
+2025-05-03 14:00:21 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-05-03 14:00:21 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:00:21 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:00:21 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-03 14:00:21 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-03 14:00:21 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Starting DroneInventorySystemApplication using Java 17.0.10 with PID 732 (/Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem/target/classes started by KurokiKazuma in /Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem)
+2025-05-03 14:00:21 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - The following 1 profile is active: "develop"
+2025-05-03 14:00:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-03 14:00:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+2025-05-03 14:00:21 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-03 14:00:21 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:00:21 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-03 14:00:21 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-05-03 14:00:21 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-03 14:00:21 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 523 ms
+2025-05-03 14:00:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-05-03 14:00:21 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@734cd745
+2025-05-03 14:00:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-05-03 14:00:21 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/stock_mng'
+2025-05-03 14:00:21 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-03 14:00:22 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:00:22 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-03 14:00:22 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d1740c8e-b3a8-4c8a-bc61-044732b87f96
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-03 14:00:22 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62c9d52, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7bdb4cf3, org.springframework.security.web.context.SecurityContextHolderFilter@5cd473d5, org.springframework.security.web.header.HeaderWriterFilter@71f52ae, org.springframework.security.web.csrf.CsrfFilter@23df6c67, org.springframework.security.web.authentication.logout.LogoutFilter@3b22ba33, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b116e4b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b0807c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39609c1f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55068299, org.springframework.security.web.access.ExceptionTranslationFilter@37e15184]
+2025-05-03 14:00:22 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-05-03 14:00:22 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:00:22 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-03 14:00:22 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Started DroneInventorySystemApplication in 1.256 seconds (process running for 142.933)
+2025-05-03 14:00:22 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-05-03 14:01:43 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-05-03 14:01:43 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:01:43 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:01:43 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-05-03 14:01:43 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-05-03 14:01:43 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Starting DroneInventorySystemApplication using Java 17.0.10 with PID 732 (/Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem/target/classes started by KurokiKazuma in /Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem)
+2025-05-03 14:01:43 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - The following 1 profile is active: "develop"
+2025-05-03 14:01:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-03 14:01:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 4 JPA repository interfaces.
+2025-05-03 14:01:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-03 14:01:43 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:01:43 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-03 14:01:43 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-05-03 14:01:43 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-03 14:01:43 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 486 ms
+2025-05-03 14:01:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-05-03 14:01:43 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16d33c42
+2025-05-03 14:01:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-05-03 14:01:43 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/stock_mng'
+2025-05-03 14:01:43 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-03 14:01:43 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:01:44 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-03 14:01:44 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d76f5fbd-4e98-4f7c-b234-4dd647f2ffa8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-03 14:01:44 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@29394218, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@471659d2, org.springframework.security.web.context.SecurityContextHolderFilter@21b30b44, org.springframework.security.web.header.HeaderWriterFilter@10695e67, org.springframework.security.web.csrf.CsrfFilter@446dba7e, org.springframework.security.web.authentication.logout.LogoutFilter@35ec8c5a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a3dbf6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@824fb46, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56fca97c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16c99336, org.springframework.security.web.access.ExceptionTranslationFilter@12e98deb]
+2025-05-03 14:01:44 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-05-03 14:01:44 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:01:44 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-03 14:01:44 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Started DroneInventorySystemApplication in 1.09 seconds (process running for 224.669)
+2025-05-03 14:01:44 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-05-03 14:02:47 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-05-03 14:02:47 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:02:47 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:02:47 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2025-05-03 14:02:47 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2025-05-03 14:02:47 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Starting DroneInventorySystemApplication using Java 17.0.10 with PID 732 (/Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem/target/classes started by KurokiKazuma in /Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem)
+2025-05-03 14:02:47 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - The following 1 profile is active: "develop"
+2025-05-03 14:02:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-03 14:02:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 4 JPA repository interfaces.
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-03 14:02:48 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:02:48 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-03 14:02:48 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-05-03 14:02:48 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 408 ms
+2025-05-03 14:02:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2025-05-03 14:02:48 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fe346ba
+2025-05-03 14:02:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/stock_mng'
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:02:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-03 14:02:48 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7aba0d53-d615-496a-8b78-1400cb6331f5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25a3c4d5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53769cc6, org.springframework.security.web.context.SecurityContextHolderFilter@1a164b70, org.springframework.security.web.header.HeaderWriterFilter@42871c7, org.springframework.security.web.csrf.CsrfFilter@66cb8444, org.springframework.security.web.authentication.logout.LogoutFilter@13bc3e88, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b5f42a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@204515d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c385f41, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@214cb05e, org.springframework.security.web.access.ExceptionTranslationFilter@eda4f74]
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-05-03 14:02:48 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-03 14:02:48 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Started DroneInventorySystemApplication in 0.957 seconds (process running for 289.029)
+2025-05-03 14:02:48 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-05-03 14:03:56 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-03 14:03:56 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-03 14:03:56 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-05-03 14:04:03 [http-nio-8080-exec-9] INFO  APP - 【INFO】時間: 1746248643083 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:04:03 [http-nio-8080-exec-9] INFO  APP - 【INFO】時間: 1746248643330 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:04:09 [http-nio-8080-exec-4] INFO  APP - 【INFO】時間: 1746248649297 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:04:09 [http-nio-8080-exec-4] INFO  APP - 【INFO】時間: 1746248649378 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:04:23 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1746248663343 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:04:23 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1746248663452 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:04:29 [http-nio-8080-exec-4] INFO  APP - 【INFO】時間: 1746248669211 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:04:29 [http-nio-8080-exec-4] INFO  APP - 【INFO】時間: 1746248669242 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:04:32 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1746248672284 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:04:32 [http-nio-8080-exec-3] INFO  APP - 【INFO】時間: 1746248672319 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:04:35 [http-nio-8080-exec-5] INFO  APP - 【INFO】時間: 1746248675294 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:04:35 [http-nio-8080-exec-5] INFO  APP - 【INFO】時間: 1746248675314 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:04:40 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1746248680828 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:04:40 [http-nio-8080-exec-8] INFO  APP - 【INFO】時間: 1746248680862 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:04:42 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746248682013 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:04:42 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746248682022 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:04:43 [http-nio-8080-exec-9] INFO  APP - 【INFO】時間: 1746248683201 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:04:43 [http-nio-8080-exec-9] INFO  APP - 【INFO】時間: 1746248683229 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:04:44 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746248684458 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:04:44 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746248684480 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:04:47 [http-nio-8080-exec-1] INFO  APP - 【INFO】時間: 1746248687219 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:04:47 [http-nio-8080-exec-1] INFO  APP - 【INFO】時間: 1746248687226 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:07:44 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-05-03 14:07:44 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:07:44 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:07:44 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2025-05-03 14:07:44 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2025-05-03 14:11:01 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Starting DroneInventorySystemApplication using Java 17.0.10 with PID 866 (/Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem/target/classes started by KurokiKazuma in /Users/KurokiKazuma/Workspace/Digital-OJT/DroneInventorySystem)
+2025-05-03 14:11:01 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - The following 1 profile is active: "develop"
+2025-05-03 14:11:01 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-03 14:11:01 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-03 14:11:03 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-03 14:11:03 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 4 JPA repository interfaces.
+2025-05-03 14:11:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-03 14:11:04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:11:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-03 14:11:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-05-03 14:11:04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-03 14:11:04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2160 ms
+2025-05-03 14:11:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-03 14:11:04 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d6859e9
+2025-05-03 14:11:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-03 14:11:04 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/stock_mng'
+2025-05-03 14:11:05 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-03 14:11:06 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:11:07 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-03 14:11:07 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-03 14:11:07 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a100e001-a647-4747-978c-97a5d7d43a1e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-03 14:11:08 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b38d0d2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@caea812, org.springframework.security.web.context.SecurityContextHolderFilter@3bbeafbd, org.springframework.security.web.header.HeaderWriterFilter@5b8b5a43, org.springframework.security.web.csrf.CsrfFilter@5a75d7f8, org.springframework.security.web.authentication.logout.LogoutFilter@4f3db0c3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4ecf0129, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@596063d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ccd302, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19b661bb, org.springframework.security.web.access.ExceptionTranslationFilter@632c418]
+2025-05-03 14:11:08 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-05-03 14:11:08 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:11:08 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-03 14:11:08 [restartedMain] INFO  c.d.w.DroneInventorySystemApplication - Started DroneInventorySystemApplication in 7.56 seconds (process running for 8.619)
+2025-05-03 14:11:10 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-03 14:11:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-03 14:11:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-05-03 14:11:14 [http-nio-8080-exec-5] INFO  APP - 【INFO】時間: 1746249074486 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:11:14 [http-nio-8080-exec-5] INFO  APP - 【INFO】時間: 1746249074699 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:11:19 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249079761 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:11:19 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249079804 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:11:21 [http-nio-8080-exec-1] INFO  APP - 【INFO】時間: 1746249081790 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:11:21 [http-nio-8080-exec-1] INFO  APP - 【INFO】時間: 1746249081821 | 処理対象: 在庫センター情報画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:11:23 [http-nio-8080-exec-2] INFO  APP - 【INFO】時間: 1746249083096 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 開始
+2025-05-03 14:11:23 [http-nio-8080-exec-2] INFO  APP - 【INFO】時間: 1746249083128 | 処理対象: 在庫一覧画面 | 処理内容: 初期表示 | 処理結果: 成功
+2025-05-03 14:11:26 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249086223 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:26 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249086266 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:11:28 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249088777 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:28 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249088806 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:11:35 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249095766 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:35 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249095798 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:11:38 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249098378 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:38 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249098414 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:11:41 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249101626 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:41 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249101660 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:11:46 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249106099 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:46 [http-nio-8080-exec-10] INFO  APP - 【INFO】時間: 1746249106129 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 成功
+2025-05-03 14:11:50 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249110613 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:50 [http-nio-8080-exec-7] ERROR APP - 【ERROR】時間: 1746249110622 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: エラー | エラー内容: 在庫数には数値を入力してください。
+2025-05-03 14:11:54 [http-nio-8080-exec-2] INFO  APP - 【INFO】時間: 1746249114431 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:54 [http-nio-8080-exec-2] ERROR APP - 【ERROR】時間: 1746249114436 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: エラー | エラー内容: 在庫数の数値の大小関係は正しく入力してください。
+2025-05-03 14:11:58 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249118221 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:11:58 [http-nio-8080-exec-7] ERROR APP - 【ERROR】時間: 1746249118232 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: エラー | エラー内容: 不正な入力を検知しました。
+2025-05-03 14:12:00 [http-nio-8080-exec-2] INFO  APP - 【INFO】時間: 1746249120653 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:12:00 [http-nio-8080-exec-2] ERROR APP - 【ERROR】時間: 1746249120664 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: エラー | エラー内容: 部品名は20文字以内で入力してください。
+2025-05-03 14:12:02 [http-nio-8080-exec-7] INFO  APP - 【INFO】時間: 1746249122484 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: 開始
+2025-05-03 14:12:02 [http-nio-8080-exec-7] ERROR APP - 【ERROR】時間: 1746249122494 | 処理対象: 在庫一覧画面 | 処理内容: 検索処理 | 処理結果: エラー | エラー内容: すべてのフィールドが空です。少なくとも1つのフィールドに値を入力してください。
+2025-05-03 14:12:11 [RMI TCP Connection(9)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-05-03 14:12:11 [RMI TCP Connection(9)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-05-03 14:12:11 [RMI TCP Connection(9)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 14:12:11 [RMI TCP Connection(9)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-03 14:12:11 [RMI TCP Connection(9)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

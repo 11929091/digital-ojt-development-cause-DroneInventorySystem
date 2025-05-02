@@ -58,4 +58,13 @@ public class ErrorMessage {
 
 	// 在庫センター情報_容量比較に関するエラーメッセージ
 	public static final String STORAGE_CAPACITY_COMPARE_CURRENT_CAPACITY_ERROR_MESSAGE = "storageCapacity.compareCurrentCapacity";
+
+	// 在庫一覧情報_部品名文字数超過に関するエラーメッセージ
+	public static final String STOCK_NAME_LENGTH_ERROR_MESSAGE = "stockName.length.wrongInput";
+
+	// 在庫一覧情報_在庫数入力に関するエラーメッセージ
+	public static final String AMOUNT_WRONG_INPUT_ERROR_MESSAGE = "amount.wrongInput";
+
+	// 在庫一覧情報_在庫数比較に関するエラーメッセージ
+	public static final String COMPARE_AMOUNT_ERROR_MESSAGE = "compareAmount.error";
 }

@@ -36,33 +36,13 @@ public class StockInfoSearchFormValidatorImpl
 			return false;
 		}
 
-		// 分類名の入力チェック
-		if (form.getCategoryName() != null) {
-
-			// 文字数チェック
-			if (form.getCategoryName().length() > FormParams.CENTER_INFO_MAX_LENGTH) {
-				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(ErrorMessage.CENTER_NAME_LENGTH_ERROR_MESSAGE)
-						.addConstraintViolation();
-				return false;
-			}
-
-			// 不正文字列チェック
-			if (ParmCheckUtil.isParameterInvalid(form.getCategoryName())) {
-				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(ErrorMessage.INVALID_INPUT_ERROR_MESSAGE)
-						.addConstraintViolation();
-				return false;
-			}
-		}
-
 		// 部品名の入力チェック
 		if (form.getName() != null) {
 
 			// 文字数チェック
 			if (form.getName().length() > FormParams.CENTER_INFO_MAX_LENGTH) {
 				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(ErrorMessage.CENTER_NAME_LENGTH_ERROR_MESSAGE)
+				context.buildConstraintViolationWithTemplate(ErrorMessage.STOCK_NAME_LENGTH_ERROR_MESSAGE)
 						.addConstraintViolation();
 				return false;
 			}
@@ -90,28 +70,28 @@ public class StockInfoSearchFormValidatorImpl
 			} catch (NumberFormatException e) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate(
-						ErrorMessage.STORAGE_CAPACITY_WRONG_INPUT_ERROR_MESSAGE)
+						ErrorMessage.AMOUNT_WRONG_INPUT_ERROR_MESSAGE)
 						.addConstraintViolation();
 				return false;
 			}
 		}
-		// 容量(To)に入力があれば
+		// 在庫数(To)に入力があれば
 		if (!form.getStockAmountTo().isEmpty()) {
 			try {
 				// String型→int型への型変換に失敗すればエラーメッセージを表示
 				stockAmountTo = Integer.parseInt(form.getStockAmountTo());
-				// 容量(From) < 容量(To) の場合、エラーメッセージを表示
+				// 在庫数(From) < 在庫数(To) の場合、エラーメッセージを表示
 				if (stockAmountFrom > stockAmountTo) {
 					context.disableDefaultConstraintViolation();
 					context.buildConstraintViolationWithTemplate(
-							ErrorMessage.STORAGE_CAPACITY_COMPARE_CURRENT_CAPACITY_ERROR_MESSAGE)
+							ErrorMessage.COMPARE_AMOUNT_ERROR_MESSAGE)
 							.addConstraintViolation();
 					return false;
 				}
 			} catch (NumberFormatException e) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate(
-						ErrorMessage.STORAGE_CAPACITY_WRONG_INPUT_ERROR_MESSAGE)
+						ErrorMessage.AMOUNT_WRONG_INPUT_ERROR_MESSAGE)
 						.addConstraintViolation();
 				return false;
 			}

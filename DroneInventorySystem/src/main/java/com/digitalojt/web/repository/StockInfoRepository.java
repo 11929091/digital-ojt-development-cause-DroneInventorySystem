@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.digitalojt.web.entity.CategoryInfo;
+import com.digitalojt.web.entity.CenterInfo;
 import com.digitalojt.web.entity.StockInfo;
 
 /**
@@ -38,11 +40,18 @@ public interface StockInfoRepository extends JpaRepository<StockInfo, Integer> {
 			Integer stockAmountTo);
 
 	/**
-	 * 分類名リストを取得
+	 * 分類名情報を取得
 	 * 
 	 * @return paramで検索した結果
 	 */
-	@Query("SELECT c.categoryName FROM StockInfo s INNER JOIN CategoryInfo c ON s.categoryId = c.categoryId")
-	public List<StockInfo> getCategoryNameList();
-		
+	@Query("SELECT c FROM StockInfo s INNER JOIN CategoryInfo c ON s.categoryId = c.categoryId")
+	public List<CategoryInfo> getCategoryName();
+
+	/**
+	 * 保管場所情報を取得
+	 * 
+	 * @return paramで検索した結果
+	 */
+	@Query("SELECT c FROM StockInfo s INNER JOIN CenterInfo c ON s.centerId = c.centerId")
+	public List<CenterInfo> getCenterName();
 }
